@@ -45,6 +45,19 @@ services:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
 
+  superset:
+    image: tylerfowler/superset:latest
+    container_name: superset_visualization
+    ports:
+      - '8088:8088'
+      - '8089:8089'
+    environment:
+      ADMIN_USERNAME: ${ADMIN_USERNAME}
+      ADMIN_PWD: ${ADMIN_PWD}
+      ADMIN_FIRST_NAME: ${ADMIN_FIRST_NAME}
+      ADMIN_LAST_NAME: ${ADMIN_LAST_NAME}
+      ADMIN_EMAIL: ${ADMIN_EMAIL}
+
 volumes:
   jupyterlab_notebook:
   postgres_database:
