@@ -1,0 +1,51 @@
+version: '2'
+
+services:
+  jupyter:
+    image: 'jupyter/datascience-notebook:latest'
+    container_name: jupyterlab_notebook
+    ports: 
+      - '8888:8888'
+      - '8889:8889'
+    volumes:
+      - jupyterlab_notebook:/home/jovyan/work
+    environment:
+      JUPYTER_ENABLE_LAB: 'yes'
+      
+  minio:
+    image: 'bitnami/minio:latest'
+    container_name: minio_storage
+    ports:
+      - '9000:9000'
+      - '9001:9001'
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+      
+  postgres:
+    image: 'postgres:latest'
+    container_name: postgres_database
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_database:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      
+  pgadmin:
+    image: 'dpage/pgadmin4:5'
+    container_name: pgadmin_management
+    ports:
+      - '5556:80'
+    volumes:
+      - pgadmin_management:/var/lib/pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+
+volumes:
+  jupyterlab_notebook:
+  postgres_database:
+  pgadmin_management:
