@@ -1,9 +1,9 @@
-version: '2'
+version: '3'
 
 services:
   jupyter:
     image: 'jupyter/datascience-notebook:latest'
-    container_name: jupyterlab_notebook
+    container_name: jupyterlab_notebooks
     ports: 
       - '8888:8888'
       - '8889:8889'
@@ -14,17 +14,19 @@ services:
       
   minio:
     image: 'bitnami/minio:latest'
-    container_name: minio_storage
+    container_name: minio_storages
     ports:
       - '9000:9000'
       - '9001:9001'
+    volumes:
+      - minio_storage:/data
     environment:
       MINIO_ROOT_USER: ${MINIO_ROOT_USER}
       MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
       
   postgres:
     image: 'postgres:latest'
-    container_name: postgres_database
+    container_name: postgres_databases
     ports:
       - '5432:5432'
     volumes:
@@ -35,8 +37,8 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       
   pgadmin:
-    image: 'dpage/pgadmin4:5'
-    container_name: pgadmin_management
+    image: 'dpage/pgadmin4:latest'
+    container_name: pgadmin_managements
     ports:
       - '5556:80'
     volumes:
@@ -46,8 +48,8 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
 
   superset:
-    image: tylerfowler/superset:latest
-    container_name: superset_visualization
+    image: 'tylerfowler/superset:latest'
+    container_name: superset_visualizations
     ports:
       - '8088:8088'
       - '8089:8089'
@@ -60,5 +62,6 @@ services:
 
 volumes:
   jupyterlab_notebook:
+  minio_storage:
   postgres_database:
   pgadmin_management:
