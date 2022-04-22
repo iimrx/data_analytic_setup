@@ -1,6 +1,6 @@
 <!-- About The Project -->
 # Data Analytic Setup using Docker & Portainer
-This setup is a base data analysis/engineering setup, where its simplifies the process of setting up new dev/prod environment.
+This setup is a base data analysis/engineering setup, where its simplifies the process of setting up new development environment.
 
 <!-- Used Container Images -->
 ### Containers (Docker & Docker Compose) Images:
