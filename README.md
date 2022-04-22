@@ -18,4 +18,5 @@ docker run -d -p 9443:9443 --name portainer_managment --restart=always -v /var/r
 ```
 
 After running the command above, you can reach portainer on "localhost:9443":
+
 ![Portainer Dashboard](img/portainer.png?raw=true "Portainer Dashboard")
