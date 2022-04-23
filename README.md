@@ -23,7 +23,13 @@ After running the command above, you can reach portainer locally on port 9443 (l
 
 ### Setting Up Our Stack:
 
-Our data analytic stack contains all needed tools to start with, including JupyterLab, MinIO, PostgreSQL, PgAdmin and Apache Superset. Used Jupyter as my analytic editor for my scripts, minIO as storage for my csv's files etc., postgres as my database of choice and pgAdmin as my adminstration gui for my database, and apache superset as my visualization tool of choice. 
+Our data analytic stack contains all needed tools to start with, including `JupyterLab`, `MinIO`, `PostgreSQL`, `PgAdmin` and `Apache Superset`. Used Jupyter as my analytic editor for my scripts, minIO as storage for my csv's files etc., postgres as my database of choice and pgAdmin as my adminstration gui for my database, and apache superset as my visualization tool of choice. 
+
+
+Lets start deploying our stack by filling the following requirements:
+- `Name`: Here were you declare the name of your stack
+- `Build Method`: Here you choose how you prefer to build your stack, for me i have already prepared a docker-compose.yml file to use, so am gonna choose Upload method
+- `Environment Variables`: Here were you can declare environment variables, for me am gonna deploy my prepared .env file
 
 ![Portainer Dashboard](img/portainer-2.png?raw=true "Portainer Dashboard")
 
