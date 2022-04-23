@@ -19,6 +19,7 @@ docker run -d -p 9443:9443 --name portainer_managment --restart=always -v /var/r
 
 After running the command above, you can reach portainer locally on port 9443 (localhost:9443) :
 
+
 ![Portainer Dashboard](img/portainer-1.png?raw=true "Portainer Dashboard")
 
 ### Setting Up Our Stack:
