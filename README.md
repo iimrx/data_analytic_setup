@@ -13,17 +13,21 @@ This setup is a base data analysis/engineering setup, where its simplifies the p
 
 Portainer allows you to manage your Docker stacks, containers, images, volumes, networks and more. It is compatible with the standalone Docker engine and with Docker Swarm. To run portainer using docker use the bellow command:
 
-- `Port`: 9443
-- `Name`: portainer_managment
-- `Restart`: always
-- `Volumes`: portainer_data:/data
-- `Image`: portainer/portainer-ce:latest
+
+```
+Port: 9443
+Name: portainer_managment
+Restart: always
+Volume: portainer_data:/data
+Image: portainer/portainer-ce:latest
+```
+
+Run the following command for spinning up portainer on docker container:
 
 ``` docker
 docker run -d -p 9443:9443 --name portainer_managment --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
 ```
-
-After running the command above, you can reach portainer locally on port 9443 (localhost:9443) :
+After running the command above, you can reach portainer locally on port 9443 ( `localhost:9443` ) :
 
 ![Portainer Dashboard](img/portainer-1.png?raw=true "Portainer Dashboard")
 
