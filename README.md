@@ -6,7 +6,7 @@ This setup is a base data analysis/engineering setup, where its simplifies the p
 ### Containers (Docker & Docker Compose) Images:
 - <a href="https://hub.docker.com/r/portainer/portainer-ce">Portainer</a>, <a href="https://hub.docker.com/r/jupyter/datascience-notebook">JupyterLab</a>
 - <a href="https://hub.docker.com/_/postgres">PostgreSQL</a>, <a href="https://hub.docker.com/r/dpage/pgadmin4">pgAdmin</a>
-- <a href="https://hub.docker.com/r/bitnami/minio">MinIO</a>, <a href="https://hub.docker.com/r/tylerfowler/superset">Superset</a>
+- <a href="https://hub.docker.com/r/bitnami/minio">MinIO</a>, <a href="https://hub.docker.com/r/tylerfowler/superset">Apache Superset</a>
 
 
 ### Setting Up Portainer:
@@ -16,10 +16,10 @@ Portainer allows you to manage your Docker stacks, containers, images, volumes, 
 
 ```
 Port: 9443
-Name: portainer_managment
+Container Name: portainer_managment
 Restart: always
-Volume: portainer_data:/data
-Image: portainer/portainer-ce:latest
+Application Volumes: portainer_data:/data
+Docker Image: portainer/portainer-ce:latest
 ```
 
 Run the following command for spinning up portainer on docker container:
