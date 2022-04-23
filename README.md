@@ -23,4 +23,4 @@ After running the command above, you can reach portainer locally on port 9443 (l
 
 ### Setting Up Our Stack:
 
-Our data analytic stack contains all needed tools to start with, including JupyterLab, MinIO, PostgreSQL, PgAdmin and Apache Superset.
+Our data analytic stack contains all needed tools to start with, including JupyterLab, MinIO, PostgreSQL, PgAdmin and Apache Superset. Used Jupyter as my analytic editor for my scripts, minIO as storage for my csv's files etc., postgreSQL as my database of choice and pgAdmin as my adminstration gui for my database, and apache superset as my visualization tool of choice. 
