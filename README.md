@@ -47,7 +47,7 @@ After deploying the stack successfully, our stack is ready to use in the followi
 
 - JupyterLab: ( `localhost:8888` )
 - MinIO: ( `localhost:9000` or `localhost:9001` )
-- PgAdmin: ( `localhost:5556` )
+- PostgreSQL: ( `localhost:5432` ), PgAdmin: ( `localhost:5556` )
 - Superset: ( `localhost:8088` )
 
 ![Portainer Dashboard](img/portainer-3.png?raw=true "Portainer Dashboard")
