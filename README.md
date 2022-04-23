@@ -43,3 +43,8 @@ Lets start deploying our stack by filling the following requirements:
 
 ![Portainer Dashboard](img/portainer-2.png?raw=true "Portainer Dashboard")
 
+After deploying the stack, our stack is ready to use in the following ports:
+- `JupyterLab`: localhost:8888
+- `MinIO`: localhost:9001
+- `PgAdmin`: localhost:5556
+- `Superset`: localhost:8088
