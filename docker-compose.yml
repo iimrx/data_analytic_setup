@@ -4,17 +4,20 @@ services:
   jupyter:
     image: 'jupyter/datascience-notebook:latest'
     container_name: jupyterlab_notebooks
+    restart: always
     ports: 
       - '8888:8888'
       - '8889:8889'
     volumes:
       - jupyterlab_notebook:/home/jovyan/work
     environment:
-      JUPYTER_ENABLE_LAB: 'yes'
+      JUPYTER_ENABLE_LAB: ${JUPYTER_ENABLE_LAB}
+    command: "start-notebook.sh --NotebookApp.token='' --NotebookApp.password=''"
       
   minio:
     image: 'bitnami/minio:latest'
     container_name: minio_storages
+    restart: always
     ports:
       - '9000:9000'
       - '9001:9001'
@@ -27,6 +30,7 @@ services:
   postgres:
     image: 'postgres:latest'
     container_name: postgres_databases
+    restart: always
     ports:
       - '5432:5432'
     volumes:
@@ -39,6 +43,9 @@ services:
   pgadmin:
     image: 'dpage/pgadmin4:latest'
     container_name: pgadmin_managements
+    restart: always
+    depends_on: 
+      - postgres
     ports:
       - '5556:80'
     volumes:
@@ -50,6 +57,7 @@ services:
   superset:
     image: 'tylerfowler/superset:latest'
     container_name: superset_visualizations
+    restart: always
     ports:
       - '8088:8088'
       - '8089:8089'
