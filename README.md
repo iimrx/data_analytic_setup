@@ -23,7 +23,11 @@ Docker Image: portainer/portainer-ce:latest
 ```
 
 Run the following command for spinning up portainer on docker container:
-
+ - To begin, build the volume on which Portainer Server will keep its database:
+ ```docker
+ docker volume create portainer_data
+ ```
+ - Then, go ahead and download and install the Portainer Server container:
 ``` docker
 docker run -d -p 9443:9443 --name portainer_managment --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
 ```
